@@ -40,7 +40,7 @@ export default function ForestBlock({number, hasNutFunc, startPressed, amountOfN
     <TouchableOpacity
     onPress={hasNut ? hasNutOnPress : hasNoNut} 
     style={[styles.block, {backgroundColor: color}]}>
-      <Text>{buttonText}</Text>
+      <Text style={styles.text}>{buttonText}</Text>
     </TouchableOpacity>
   );
 }
@@ -55,4 +55,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  text: {
+    fontSize: 30
+  }
 });
