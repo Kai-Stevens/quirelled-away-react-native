@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import ForestGrid from './components/ForestGrid'
+import UserInterface from './components/UserInterface';
+import { useState } from 'react';
 
 export default function App() {
+  const [amountOfNuts, setAmountOfNuts] = useState(0);
+  const [startPressed, setStartPressed] = useState(false);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ForestGrid startPressed={startPressed} amountOfNuts={amountOfNuts} setAmountOfNuts={setAmountOfNuts}/>
+      <UserInterface amountOfNuts={amountOfNuts} startPressed={startPressed} setStartPressed={setStartPressed}/>
     </View>
   );
 }
@@ -13,8 +19,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 26,
+    padding: 10,
+    backgroundColor: '#997868',
   },
 });
